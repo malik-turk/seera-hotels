@@ -1,10 +1,32 @@
 import type { NextPage } from 'next';
+import Image from 'next/image';
 
-import styles from '../styles/Home.module.scss';
+import { Container, FullScreenImage } from '../styled-components/Shared';
+import { HomeWrapper, Heading, Paragraph } from '../styled-components/Home';
+import DateRange from '../components/DateRange';
+
+import bgImage from '../assets/images/bg-image.jpeg';
 
 const Home: NextPage = () => {
   return (
-    <div>Home</div>
+    <main>
+      <Container>
+        <HomeWrapper>
+          <FullScreenImage>
+            <Image
+              src={bgImage}
+              alt="background image"
+              layout="fill"
+              objectFit="cover"
+              quality={100}
+            />
+          </FullScreenImage>
+          <Heading>Find your next stay</Heading>
+          <Paragraph>Search deals on hotels, homes, and much more...</Paragraph>
+          <DateRange />
+        </HomeWrapper>
+      </Container>
+    </main>
   )
 }
 
