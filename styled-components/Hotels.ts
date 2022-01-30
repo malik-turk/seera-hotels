@@ -35,7 +35,7 @@ export const HotelNameInput = styled.div`
     position: relative;
     height: 40px;
     position: sticky;
-    top: 0;
+    top: 40px;
 
     input {
         height: 100%;
@@ -57,7 +57,12 @@ export const ImageContainer = styled.figure`
 export const RangeContainer = styled.div`
     margin-top: 40px;
     position: sticky;
-    top: 80px;
+    top: 120px;
+
+    .price-filter-label {
+        margin-bottom: 10px;
+        display: inline-block;
+    }
 `
 
 // Main Content
@@ -72,8 +77,6 @@ export const SortBar = styled.div`
     align-items: center;
     background-color: #FFF;
     padding: 5px;
-    position: sticky;
-    top: 0;
 
     span {
         margin-right: 5px;

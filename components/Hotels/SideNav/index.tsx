@@ -23,7 +23,7 @@ export default function SideNavComponent() {
         <input type="text" id="" placeholder="Hotel Name..." />
       </HotelNameInput>
       <RangeContainer>
-        <span>Price Filter</span>
+        <span className="price-filter-label">Price Filter</span>
         <Range
           pushable
           min={0}
