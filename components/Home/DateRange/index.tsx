@@ -3,9 +3,9 @@ import DatePicker from "react-datepicker";
 import Link from "next/link";
 import Image from "next/image";
 
-import { DatePickerContainer, DatePickerWrapper, SearchButton } from '../../styled-components/Home';
+import { DatePickerContainer, DatePickerWrapper, SearchButton } from '../../../styled-components/Home';
 
-import SearchIcon from '../../assets/images/search.png';
+import SearchIcon from '../../../assets/images/search.png';
 
 import "react-datepicker/dist/react-datepicker.css";
 

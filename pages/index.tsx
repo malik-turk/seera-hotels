@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { Container, FullScreenImage } from '../styled-components/Shared';
 import { HomeWrapper, Heading, Paragraph } from '../styled-components/Home';
-import DateRange from '../components/DateRange';
+import DateRange from '../components/Home/DateRange';
 
 import bgImage from '../assets/images/bg-image.jpeg';
 
@@ -12,7 +12,7 @@ const Home: NextPage = () => {
     <main>
       <Container>
         <HomeWrapper>
-          <FullScreenImage>
+          <FullScreenImage bgColor="#000">
             <Image
               src={bgImage}
               alt="background image"

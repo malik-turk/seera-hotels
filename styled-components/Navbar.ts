@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
+import { HeaderProps } from '../type/LayoutProps';
+
 export const LogoContainer = styled.div`
     display: flex;
     align-items: center;
-    margin-bottom: 50px;
-    padding-top: 40px;
+    height: 80px;
 
     img {
         filter: invert(1);
@@ -16,17 +17,11 @@ export const Title = styled.span`
     font-size: 18px;
     text-transform: uppercase;
     margin-left: 10px;
+    color: #FFF;
 `;
 
-export const Header = styled.header`
-    background: rgb(0,0,0);
-    background: linear-gradient(
-                    180deg,
-                    rgba(0,0,0,1) 0%,
-                    rgba(0,0,0,0.38) 52%,
-                    rgba(0,0,0,0) 83%,
-                    rgba(0,0,0,0) 100%
-                );
-    position: fixed;
+export const Header = styled.header<HeaderProps>`
     width: 100%;
+
+    ${(props) => props.darkTheme ? `color: #FFF` : `filter: invert(1)`}
 `;

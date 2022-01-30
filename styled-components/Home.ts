@@ -6,7 +6,7 @@ export const HomeWrapper = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    min-height: calc(100vh - 80px);
     flex-direction: column;
 `;
 
@@ -117,8 +117,10 @@ export const SearchButton = styled.button`
 export const Heading = styled.h1`
     margin: 0;
     font-weight: 500;
+    color: #FFF;
 `;
 
 export const Paragraph = styled.p`
     margin: 10px 0 20px;
+    color: #FFF;
 `;
