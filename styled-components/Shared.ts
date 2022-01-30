@@ -25,3 +25,22 @@ export const FullScreenImage = styled.div<FullScreenImageProps>`
         background-color: ${props.bgColor};
     `}
 `;
+
+export const Button = styled.button`
+    border: solid 1px #000;
+    outline: 0;
+    color: #FFF;
+    background-color: #000;
+    height: 40px;
+    width: auto;
+    transition: background-color 200ms ease;
+    cursor: pointer;
+    border-radius: 2px;
+    font-weight: 500;
+
+    :hover {
+        color: #000;
+        background-color: #FFF;
+        border: solid 1px #000;
+    }
+`;
