@@ -13,7 +13,7 @@ import { baseURL, hotelsEndpoint } from '../config/config';
 
 import { Hotel } from '../type/Hotels';
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const { data } = await axios.get(`${baseURL}${hotelsEndpoint}`);
 
   return {
