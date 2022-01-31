@@ -29,6 +29,6 @@
 
 ### Checklist
 
--  <input type="checkbox" value="" checked> Code accompanies the Unit Tests
--  <input type="checkbox" value="" checked> Usage is clearly mentioned in the README file, This including setup the project, how to run it, how to run unit test, examples,etc
--  <input type="checkbox" value="" checked> Uses the endpoint directly
+-  Code accompanies the Unit Tests
+-  Usage is clearly mentioned in the README file, This including setup the project, how to run it, how to run unit test, examples,etc
+-  Uses the endpoint directly
