@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { isAfter, isBefore, parseISO } from 'date-fns';
 
 import { HotelsWrapper, HotelsContainer } from '../styled-components/Hotels';
 import { Container } from '../styled-components/Shared';
@@ -26,10 +28,14 @@ export default function Hotels({ hotelsData }: { hotelsData: Hotel[] }) {
   const [rangeValue, setRangeValue] = useState<number[]>([200, 350]);
   const [hotels, setHotelsData] = useState<Hotel[]>(hotelsData);
 
+  const { query }: { query: any } = useRouter();
+
   useEffect(() => {
     const filtered = hotelsData.filter((hotel: Hotel) => {
       return hotel.name.toLowerCase().includes(searchValue.toLowerCase()) &&
-             parseInt(hotel.price, 10) >= rangeValue[0] && parseInt(hotel.price, 10) <= rangeValue[1]
+        parseInt(hotel.price, 10) >= rangeValue[0] && parseInt(hotel.price, 10) <= rangeValue[1] &&
+        isAfter(parseISO(hotel.available_on), parseISO(query.startDate)) &&
+        isBefore(parseISO(hotel.available_on), parseISO(query.endDate))
     });
 
     setHotelsData(filtered);

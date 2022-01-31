@@ -2,10 +2,10 @@ export interface LayoutProps {
     children: React.ReactNode
 }
 
-interface HeaderProps {
+export interface HeaderProps {
     darkTheme: boolean;
 }
 
-interface FullScreenImageProps {
+export interface FullScreenImageProps {
     bgColor: string;
 }

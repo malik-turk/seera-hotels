@@ -2,6 +2,7 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import Link from "next/link";
 import Image from "next/image";
+import { add, format, parseISO } from 'date-fns';
 
 import { DatePickerContainer, DatePickerWrapper, SearchButton } from '../../../styled-components/Home';
 
@@ -10,8 +11,8 @@ import SearchIcon from '../../../assets/images/search.png';
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function DateRange() {
-    const [startDate, setStartDate] = useState<Date>(new Date());
-    const [endDate, setEndDate] = useState<Date>(new Date());
+    const [startDate, setStartDate] = useState<Date>(parseISO('2022-08-10'));
+    const [endDate, setEndDate] = useState<Date>(add(startDate, { months: 4 }));
 
     return (
         <DatePickerWrapper>
@@ -21,8 +22,11 @@ export default function DateRange() {
                 </span>
                 <DatePicker
                     selected={startDate}
-                    onChange={(date: Date) => setStartDate(date)}
-                    minDate={new Date()}
+                    onChange={(date: Date) => {
+                        setStartDate(date);
+                        setEndDate(add(date, { days: 1 }))
+                    }}
+                    minDate={parseISO('2022-08-10')}
                     dateFormat="yyyy-MM-dd"
                 />
             </DatePickerContainer>
@@ -41,7 +45,8 @@ export default function DateRange() {
                 {
                     pathname: '/hotels',
                     query: {
-                        startDate: startDate.toString()
+                        startDate: format(startDate, 'yyyy-MM-dd'),
+                        endDate: format(endDate, 'yyyy-MM-dd')
                     }
                 }}
                 passHref
