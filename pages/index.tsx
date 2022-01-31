@@ -3,6 +3,7 @@ import Image from 'next/image';
 
 import { Container, FullScreenImage } from '../styled-components/Shared';
 import { HomeWrapper, Heading, Paragraph } from '../styled-components/Home';
+
 import DateRange from '../components/Home/DateRange';
 
 import bgImage from '../assets/images/bg-image.jpeg';
