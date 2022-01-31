@@ -1,23 +1,23 @@
 import { HotelCard } from '../../../styled-components/Hotels';
 
-import { Hotel } from '../../../type/Hotels';
+import { HotelCardProps } from '../../../type/Hotels';
 
-export default function HotelCardComponent({ hotel} : { hotel: Hotel }) {
+export default function HotelCardComponent(props: HotelCardProps) {
   return (
       <HotelCard>
         <div>
             <span className="card-item-key">Name: </span>
-            <span>{hotel.name}</span>
+            <span>{props.hotel.name}</span>
         </div>
 
         <div>
             <span className="card-item-key">Price: </span>
-            <span>{hotel.price}</span>
+            <span>{(parseInt(props.hotel.price, 10) * Math.abs(props.daysDifference)).toLocaleString()} AED</span>
         </div>
 
         <div>
             <span className="card-item-key">City: </span>
-            <span>{hotel.city}</span>
+            <span>{props.hotel.city}</span>
         </div>
       </HotelCard>
   );

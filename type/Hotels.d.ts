@@ -5,6 +5,11 @@ export interface Hotel {
     price: string;
 }
 
+export interface HotelCardProps {
+    hotel: Hotel;
+    daysDifference: number;
+}
+
 export interface HotelMainContentProps {
     hotels: Hotel[];
     handleAlphaSorting?: Dispatch<SetStateAction<string>>;
