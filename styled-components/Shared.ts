@@ -36,7 +36,7 @@ export const Button = styled.button`
     font-weight: 500;
     color: #000;
     background-color: #FFF;
-    border: solid 1px #000;
+    border: solid 2px #C1C1C1;
     text-transform: uppercase;
     padding: 0 10px;
 
