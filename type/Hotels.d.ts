@@ -17,6 +17,7 @@ export interface HotelMainContentProps {
 }
 
 export interface HotelSideNavProps {
+    hotels: Hotel[];
     setSearchValue?: Dispatch<SetStateAction<string>>;
     setRangeValues?: Dispatch<SetStateAction<string>>;
 }

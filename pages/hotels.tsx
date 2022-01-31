@@ -72,6 +72,7 @@ export default function Hotels({ hotelsData }: { hotelsData: Hotel[] }) {
       <Container>
         <HotelsContainer>
           <SideNavComponent
+            hotels={hotelsData}
             setRangeValues={setRangeValue}
             setSearchValue={setSearchValue}
           />

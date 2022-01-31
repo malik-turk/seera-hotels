@@ -3,6 +3,8 @@ import { createSliderWithTooltip, Range } from 'rc-slider';
 
 import { SideNav, HotelNameInput, ImageContainer, RangeContainer } from '../../../styled-components/Hotels';
 
+import { getHotelMinPrice, getHotelMaxPrice } from "../../../utils/hotel-prices";
+
 import { HotelSideNavProps } from "../../../type/Hotels";
 
 import SearchIcon from '../../../assets/images/search.png';
@@ -12,6 +14,9 @@ import 'rc-slider/assets/index.css';
 const RangeComponent = createSliderWithTooltip(Range);
 
 export default function SideNavComponent(props: HotelSideNavProps) {
+  const minPrice: number = getHotelMinPrice(props.hotels);
+  const maxPrice: number = getHotelMaxPrice(props.hotels);
+
   return (
     <SideNav>
       <HotelNameInput>
@@ -34,9 +39,9 @@ export default function SideNavComponent(props: HotelSideNavProps) {
         <span className="price-filter-label">Price Filter</span>
         <RangeComponent
           pushable
-          min={200}
-          max={350}
-          defaultValue={[200, 350]}
+          min={minPrice}
+          max={maxPrice}
+          defaultValue={[minPrice, maxPrice]}
           onChange={(e: number[]) => props.setRangeValues(e)}
         />
       </RangeContainer>
