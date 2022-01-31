@@ -28,7 +28,7 @@ export default function HotelsMainContent(props: HotelMainContentProps) {
       <HotelCards>
         {
           props.hotels.length === 0 ?
-          <h4>No Hotels Available In This Date Range</h4> :
+          <h4>No Hotels Available In This Range</h4> :
           props.hotels.map((hotel, i) => (
             <HotelCard key={i} hotel={hotel} daysDifference={daysDifference} />
           ))
