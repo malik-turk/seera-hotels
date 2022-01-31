@@ -44,8 +44,8 @@ export default function Hotels({ hotelsData }: { hotelsData: Hotel[] }) {
   }, [searchValue, rangeValue]);
 
   /**
-   * Sorts hotels alphabetically
-   */
+  * Sorts hotels alphabetically
+  */
   const handleAlphaSorting = () => {
     const tempHotels: Hotel[] = [...hotels];
 
@@ -55,8 +55,8 @@ export default function Hotels({ hotelsData }: { hotelsData: Hotel[] }) {
   };
 
   /**
-   * Sorts hotels according to the price ascending
-   */
+  * Sorts hotels according to the price ascending
+  */
   const handlePriceSorting = () => {
     const tempHotels: Hotel[] = [...hotels];
 

@@ -26,6 +26,15 @@ export const SideNav = styled.aside`
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 
+    @media ${device.tablet} {
+        position: sticky;
+        top: 0;
+        background: #f1f2f7;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 0 10px;
+    }
+
     @media ${device.desktop} {
         margin-right: 20px;
     }
@@ -84,6 +93,15 @@ export const SortBar = styled.div`
 
     button:first-child {
         margin-right: 5px;
+    }
+
+    @media ${device.tablet} {
+        flex-direction: column;
+        align-items: flex-start;
+
+        div {
+            margin-top: 10px;
+        }
     }
 `;
 

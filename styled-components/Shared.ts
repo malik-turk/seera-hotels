@@ -27,20 +27,22 @@ export const FullScreenImage = styled.div<FullScreenImageProps>`
 `;
 
 export const Button = styled.button`
-    border: solid 1px #000;
     outline: 0;
-    color: #FFF;
-    background-color: #000;
     height: 40px;
     width: auto;
     transition: background-color 200ms ease;
     cursor: pointer;
     border-radius: 2px;
     font-weight: 500;
+    color: #000;
+    background-color: #FFF;
+    border: solid 1px #000;
+    text-transform: uppercase;
+    padding: 0 10px;
 
     :hover {
-        color: #000;
-        background-color: #FFF;
-        border: solid 1px #000;
+        border: solid 2px #000;
+        color: #FFF;
+        background-color: #000;
     }
 `;
