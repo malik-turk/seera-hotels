@@ -1,21 +1,23 @@
 import { HotelCard } from '../../../styled-components/Hotels';
 
-export default function HotelCardComponent() {
+import { Hotel } from '../../../type/Hotels';
+
+export default function HotelCardComponent({ hotel} : { hotel: Hotel }) {
   return (
       <HotelCard>
         <div>
-            <span className="card-item-key">Name:</span>
-            <span>Hilton Dubai Al Habtoor City</span>
+            <span className="card-item-key">Name: </span>
+            <span>{hotel.name}</span>
         </div>
 
         <div>
-            <span className="card-item-key">Price:</span>
-            <span>275</span>
+            <span className="card-item-key">Price: </span>
+            <span>{hotel.price}</span>
         </div>
 
         <div>
-            <span className="card-item-key">City:</span>
-            <span>Dubai</span>
+            <span className="card-item-key">City: </span>
+            <span>{hotel.city}</span>
         </div>
       </HotelCard>
   );

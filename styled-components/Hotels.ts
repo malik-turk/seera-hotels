@@ -11,7 +11,7 @@ export const HotelsWrapper = styled.section`
 export const HotelsContainer = styled.div`
     display: flex;
     width: 100%;
-    min-height: calc(500vh - 130px);
+    min-height: calc(100vh - 180px);
 
     @media ${device.tablet} {
         flex-direction: column;

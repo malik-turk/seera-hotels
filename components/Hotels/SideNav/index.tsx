@@ -1,13 +1,17 @@
 import Image from "next/image";
-import Slider, { Range } from 'rc-slider';
+import { createSliderWithTooltip, Range } from 'rc-slider';
 
 import { SideNav, HotelNameInput, ImageContainer, RangeContainer } from '../../../styled-components/Hotels';
+
+import { HotelSideNavProps } from "../../../type/Hotels";
 
 import SearchIcon from '../../../assets/images/search.png';
 
 import 'rc-slider/assets/index.css';
 
-export default function SideNavComponent() {
+const RangeComponent = createSliderWithTooltip(Range);
+
+export default function SideNavComponent(props: HotelSideNavProps) {
   return (
     <SideNav>
       <HotelNameInput>
@@ -20,15 +24,20 @@ export default function SideNavComponent() {
             height={15}
           />
         </ImageContainer>
-        <input type="text" id="" placeholder="Hotel Name..." />
+        <input
+          type="text"
+          placeholder="Hotel Name..."
+          onChange={(e) => props.setSearchValue(e.target.value)}
+        />
       </HotelNameInput>
       <RangeContainer>
         <span className="price-filter-label">Price Filter</span>
-        <Range
+        <RangeComponent
           pushable
-          min={0}
-          max={100}
-          defaultValue={[0, 100]}
+          min={200}
+          max={350}
+          defaultValue={[200, 350]}
+          onChange={(e: number[]) => props.setRangeValues(e)}
         />
       </RangeContainer>
     </SideNav>
